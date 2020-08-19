@@ -1,26 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import logo from "./assets/logo/stf_logo_sv_150mm150dpi.png";
+import "./App.css";
+import Navigation from "./Components/Navigation";
+import HeadlineSection from "./Components/HeadlineSection";
+import MovieSection from "./Components/MovieSection";
+import ResearchSection from "./Components/ResearchSection";
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navigation logo={logo} alt="STF logotype" />
+      <HeadlineSection />
+      <MovieSection />
+      <ResearchSection />
     </div>
   );
-}
+};
 
 export default App;
