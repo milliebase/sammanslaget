@@ -9,7 +9,7 @@ const StyledNavigation = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: white;
+  background-color: rgb(255, 255, 255, 0.1);
   backdrop-filter: blur(4px);
 
   p {
@@ -17,17 +17,28 @@ const StyledNavigation = styled.nav`
     font-weight: 700;
   }
 
+  p:last-of-type {
+    display: none;
+    text-transform: uppercase;
+  }
+
   img {
     height: 30px;
   }
+
+  @media (min-width: 992px) {
+    p:last-of-type {
+      display: block;
+    }
+  }
 `;
 
-const Navigation = ({ logo, alt }) => {
+const Navigation = ({ logo, alt, group, hashtag }) => {
   return (
     <StyledNavigation>
       <img src={logo} alt={alt} />
-      <p>Grupp 15</p>
-      <p>#SAMMANSLAGET2020</p>
+      <p>{group}</p>
+      <p>{hashtag}</p>
     </StyledNavigation>
   );
 };
