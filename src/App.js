@@ -71,7 +71,6 @@ const App = () => {
       />
 
       <MockUpSection img={content.mockUp.fields} />
-      <Footer />
     </div>
   );
 };
