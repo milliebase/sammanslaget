@@ -2,14 +2,15 @@ import React, { useState, useEffect } from "react";
 import Navigation from "./Components/Navigation";
 import HeadlineSection from "./Components/HeadlineSection";
 import MovieSection from "./Components/MovieSection";
-import ResearchSection from "./Components/ResearchSection";
 import Footer from "./Components/Footer";
 import Pitch from "./Components/Pitch";
+import MockUpSection from "./Components/MockUpSection";
 import client from "./contentful";
 
 import logo from "./assets/logo/stf_logo_sv_150mm150dpi.png";
 import "./App.css";
 import styled from "styled-components";
+import InstagramSection from "./Components/InstagramSection";
 
 const StyledLoader = styled.div`
   width: 100vw;
@@ -41,6 +42,7 @@ const App = () => {
   }
 
   const content = project[0].fields;
+  console.log(content);
 
   return (
     <div className="App">
@@ -50,10 +52,22 @@ const App = () => {
         group={content.groupName}
         hashtag={content.hashtag}
       />
-      <HeadlineSection headline={content.projectTitle} />
+
+      <HeadlineSection
+        headline={content.projectTitle}
+        url={content.logo.fields.file.url}
+      />
+
+      <MovieSection
+        video={content.video.fields.file}
+        cover={content.videoCover.fields.file.url}
+      />
+
       <Pitch title={content.pitchTitle} pitch={content.pitch} />
-      <MovieSection />
-      <ResearchSection research={content.researchTitle} />
+
+      <InstagramSection videos={content.instagramVideos} />
+
+      <MockUpSection img={content.mockUp.fields} />
       <Footer />
     </div>
   );

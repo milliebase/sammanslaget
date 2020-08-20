@@ -19,11 +19,8 @@ const StyledResearchSection = styled.section`
     }
   }
 
-  div {
+  .chart-wrapper {
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
   }
 
   @media (min-width: 992px) {
@@ -33,9 +30,16 @@ const StyledResearchSection = styled.section`
       font-size: 2em;
     }
 
-    div p {
+    .chart-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .chart-wrapper p {
       font-size: 1.8em;
       padding-right: 10%;
+      padding-left: 4%;
     }
 
     .chart-holder {
@@ -54,7 +58,7 @@ const ResearchSection = ({ research }) => {
         <h2>{research}</h2>
       </div>
 
-      <div>
+      <div className="chart-wrapper">
         <p>
           Vad har du saknat mest med den restriktiva våren och sommaren 2020?
         </p>
@@ -75,13 +79,13 @@ const ResearchSection = ({ research }) => {
             <VictoryBar
               style={{ data: { fill: "#faebeb" } }}
               data={[
-                { x: "Resa utomlands", y: 40.5 },
-                { x: "Nattklubb", y: 22.7 },
-                { x: "Sportevents", y: 36.4 },
-                { x: "Konsert", y: 50 },
-                { x: "Festivaler", y: 45.5 },
-                { x: "Umgänge", y: 59.1 },
-                { x: "Mingel", y: 22.7 },
+                { x: "Resa utomlands", y: 40.7 },
+                { x: "Nattklubb", y: 25.9 },
+                { x: "Sportevents", y: 33.3 },
+                { x: "Konsert", y: 59.3 },
+                { x: "Festivaler", y: 44.4 },
+                { x: "Umgänge", y: 51.9 },
+                { x: "Mingel", y: 25.7 },
               ]}
             />
           </VictoryChart>

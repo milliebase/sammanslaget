@@ -3,6 +3,7 @@ import styled from "styled-components";
 import client from "./../../contentful";
 
 const StyledFooter = styled.div`
+  background-color: var(--low-gold-color);
   padding: 30px;
   display: flex;
   flex-wrap: wrap;

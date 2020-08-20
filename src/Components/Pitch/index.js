@@ -1,14 +1,18 @@
 import React from "react";
 import styled from "styled-components";
 import Emoji from "../Emoji";
+import ReactMarkdown from "react-markdown";
 
 const StyledPitchSection = styled.section`
-  background-color: var(--gold-color);
+  background-color: var(--red-color);
   color: white;
   padding: 10%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+
+  .section-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
   h2 {
     margin-bottom: 0;
@@ -21,9 +25,7 @@ const StyledPitchSection = styled.section`
     }
 
     p {
-      margin: 0;
       font-size: 1.5em;
-      padding: 0 6%;
     }
   }
 `;
@@ -31,9 +33,11 @@ const StyledPitchSection = styled.section`
 const Pitch = ({ title, pitch }) => {
   return (
     <StyledPitchSection>
-      <Emoji symbol="🏆" label="trophy" />
-      <h2>{title}</h2>
-      <p>{pitch}</p>
+      <div className="section-header">
+        <Emoji symbol="🏆" label="trophy" />
+        <h2>{title}</h2>
+      </div>
+      <ReactMarkdown source={pitch} />
     </StyledPitchSection>
   );
 };

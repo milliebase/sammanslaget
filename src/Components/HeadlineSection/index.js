@@ -3,16 +3,20 @@ import styled from "styled-components";
 import "./../../App";
 
 const StyledHeadlineSection = styled.section`
-  background-color: var(--green-color);
+  background-color: var(--gold-color);
   display: flex;
   justify-content: center;
   align-items: center;
+
+  img {
+    width: 60%;
+  }
 `;
 
-const HeadlineSection = ({ headline }) => {
+const HeadlineSection = ({ headline, url }) => {
   return (
     <StyledHeadlineSection className="section">
-      <h1>{headline}</h1>
+      <img src={url} alt="logo" />
     </StyledHeadlineSection>
   );
 };
