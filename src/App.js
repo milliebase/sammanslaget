@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Navigation from "./Components/Navigation";
 import HeadlineSection from "./Components/HeadlineSection";
 import MovieSection from "./Components/MovieSection";
-import Footer from "./Components/Footer";
 import Pitch from "./Components/Pitch";
 import MockUpSection from "./Components/MockUpSection";
 import client from "./contentful";
@@ -42,7 +41,6 @@ const App = () => {
   }
 
   const content = project[0].fields;
-  console.log(content);
 
   return (
     <div className="App">
