@@ -35,13 +35,13 @@ const StyledInstagramSection = styled.section`
   }
 `;
 
-const InstagramSection = ({ videos }) => {
+const InstagramSection = ({ videos, covers }) => {
   return (
     <StyledInstagramSection className="section">
       <div className="video-wrapper">
-        {videos.map((video) => {
+        {videos.map((video, i) => {
           return (
-            <video controls>
+            <video controls poster={covers[i].fields.file.url} key={i}>
               <source src={video.fields.file.url} type="video/mp4" />
             </video>
           );

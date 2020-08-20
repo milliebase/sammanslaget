@@ -65,7 +65,10 @@ const App = () => {
 
       <Pitch title={content.pitchTitle} pitch={content.pitch} />
 
-      <InstagramSection videos={content.instagramVideos} />
+      <InstagramSection
+        videos={content.instagramVideos}
+        covers={content.instagramCovers}
+      />
 
       <MockUpSection img={content.mockUp.fields} />
       <Footer />
