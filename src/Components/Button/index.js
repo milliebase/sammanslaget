@@ -17,10 +17,13 @@ const StyledButton = styled.button`
 `;
 
 const Button = ({ text, onClick, isActiveBg, showMobile }) => {
+  console.log(showMobile);
   return (
     <StyledButton
       className={
-        isActiveBg ? "button-bg" : "" && showMobile ? "" : "hide-mobile"
+        (isActiveBg ? "button-bg" : "") +
+        " " +
+        (showMobile ? "" : "hide-mobile")
       }
       onClick={onClick}
     >
