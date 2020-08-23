@@ -3,3 +3,14 @@
   width: 100vw;
   padding: 30px;
 }
+
+.button-bg {
+  background-color: rgba(255, 255, 255, 0.918) !important;
+  color: var(--gold-color) !important;
+}
+
+@media (max-width: 700px) {
+  .hide-mobile {
+    display: none;
+  }
+}

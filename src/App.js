@@ -4,12 +4,14 @@ import HeadlineSection from "./Components/HeadlineSection";
 import MovieSection from "./Components/MovieSection";
 import Pitch from "./Components/Pitch";
 import MockUpSection from "./Components/MockUpSection";
+import InstagramSection from "./Components/InstagramSection";
+import Footer from "./Components/Footer";
 import client from "./contentful";
 
 import logo from "./assets/logo/stf_logo_sv_150mm150dpi.png";
-import "./App.css";
 import styled from "styled-components";
-import InstagramSection from "./Components/InstagramSection";
+import "./App.css";
+import Presentation from "./Components/Presentation";
 
 const StyledLoader = styled.div`
   width: 100vw;
@@ -21,6 +23,10 @@ const StyledLoader = styled.div`
 
 const App = () => {
   const [project, setProject] = useState(null);
+  const [solution, setSolution] = useState(false);
+  const [presentation, setPresentation] = useState(false);
+  const [isPresentationActive, setIsPresentationActive] = useState(false);
+  const [isSolutionActive, setIsSolutionActive] = useState(false);
 
   useEffect(() => {
     client
@@ -52,23 +58,42 @@ const App = () => {
       />
 
       <HeadlineSection
-        headline={content.projectTitle}
         url={content.logo.fields.file.url}
+        buttonText={{
+          solution: content.solutionButton,
+          presentation: content.presentationButton,
+        }}
+        setSolution={setSolution}
+        solution={solution}
+        setPresentation={setPresentation}
+        presentation={presentation}
+        setIsPresentationActive={setIsPresentationActive}
+        isPresentationActive={isPresentationActive}
+        setIsSolutionActive={setIsSolutionActive}
+        isSolutionActive={isSolutionActive}
       />
 
-      <MovieSection
-        video={content.video.fields.file}
-        cover={content.videoCover.fields.file.url}
-      />
+      {solution && (
+        <>
+          <MovieSection
+            video={content.video.fields.file}
+            cover={content.videoCover.fields.file.url}
+          />
 
-      <Pitch title={content.pitchTitle} pitch={content.pitch} />
+          <Pitch title={content.pitchTitle} pitch={content.pitch} />
 
-      <InstagramSection
-        videos={content.instagramVideos}
-        covers={content.instagramCovers}
-      />
+          <InstagramSection
+            videos={content.instagramVideos}
+            covers={content.instagramCovers}
+          />
 
-      <MockUpSection img={content.mockUp.fields} />
+          <MockUpSection img={content.mockUp.fields} />
+        </>
+      )}
+
+      {presentation && <Presentation content={content} />}
+
+      <Footer />
     </div>
   );
 };

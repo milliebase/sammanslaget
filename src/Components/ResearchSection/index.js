@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { VictoryBar, VictoryChart, VictoryAxis } from "victory";
+import { VictoryBar, VictoryChart, VictoryAxis, VictoryPie } from "victory";
 import Emoji from "../Emoji";
 
 const StyledResearchSection = styled.section`
-  background-color: var(--red-color);
+  background-color: var(--gold-color);
   color: white;
   padding: 10%;
 
@@ -77,15 +77,16 @@ const ResearchSection = ({ research }) => {
               style={{ tickLabels: { fontSize: 10 } }}
             />
             <VictoryBar
-              style={{ data: { fill: "#faebeb" } }}
+              style={{ data: { fill: "#faf0d7" } }}
               data={[
-                { x: "Resa utomlands", y: 40.7 },
-                { x: "Nattklubb", y: 25.9 },
-                { x: "Sportevents", y: 33.3 },
-                { x: "Konsert", y: 59.3 },
-                { x: "Festivaler", y: 44.4 },
-                { x: "Umgänge", y: 51.9 },
-                { x: "Mingel", y: 25.7 },
+                { x: "Facebook", y: 59.3 },
+                { x: "Instagram", y: 92.6 },
+                { x: "Twitter", y: 14.8 },
+                { x: "Snapchat", y: 48.1 },
+                { x: "Nyhetsmedier", y: 22.2 },
+                { x: "Bloggar", y: 3.7 },
+                { x: "Youtube", y: 3.7 },
+                { x: "Reddit", y: 3.7 },
               ]}
             />
           </VictoryChart>

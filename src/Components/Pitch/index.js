@@ -6,7 +6,7 @@ import ReactMarkdown from "react-markdown";
 const StyledPitchSection = styled.section`
   background-color: var(--red-color);
   color: white;
-  padding: 10%;
+  padding: 5% 10%;
 
   .section-header {
     display: flex;
